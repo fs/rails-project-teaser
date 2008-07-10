@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20080710105306) do
+ActiveRecord::Schema.define(:version => 20080710111220) do
 
   create_table "account_role_relationships", :force => true do |t|
     t.integer  "account_id"
@@ -75,6 +75,15 @@ ActiveRecord::Schema.define(:version => 20080710105306) do
     t.string   "ip"
     t.string   "referrer"
     t.string   "user_agent"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "subscribers", :force => true do |t|
+    t.string   "email"
+    t.string   "ip"
+    t.string   "user_agent"
+    t.string   "referrer"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

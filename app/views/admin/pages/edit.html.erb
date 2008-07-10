@@ -1,0 +1,11 @@
+<% @page_title = 'Editing &quot;Page&quot;' %> 
+
+<h1><%= @page_title %></h1>
+
+<% form_for([:admin, @page]) do |f| %>
+    <%= render :partial => 'form', :locals => { :f => f } %>
+
+    <div class="buttons-area">
+        <%= submit_tag "Update" %> or <%= link_to('Cancel', admin_pages_path, :class => "cancel-link") %>
+    </div>
+<% end %>

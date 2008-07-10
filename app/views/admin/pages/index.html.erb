@@ -1,0 +1,49 @@
+<% @page_title = 'Listing &quot;Pages&quot;' %>
+
+<%= list_table_title %>
+
+<% unless @pages.blank? %>
+
+<%= option_selector(:page, {
+    :to_dropdown => :url,
+    :path   => admin_pages_path(),
+    :search => { :order => 'url'},
+    :empty_line => '- '*10 + 'Jump to page' + ' -'*10
+}) %>
+
+<table cellpadding="0" cellspacing="0" border="0" class="show-data">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>URL</th>
+            <th>Title</th>
+            <th>Meta keywords</th>
+            <th>Meta description</th>
+            <th class="tools">Tools</th>
+        </tr>
+    </thead>
+
+    <tbody>
+    <% for page in @pages %>
+        <tr class="row<%= cycle(1, 2) %>">
+            <td><%=h page.name %></td>
+            <td><%=h (page.url) %></td>
+            <td><%=h page.title %></td>
+            <td><%=h page.meta_keywords %></td>
+            <td><%=h page.meta_description %></td>           
+            <td>
+                <div><%= link_to 'Edit', edit_admin_page_path(page) %></div>
+                <div><%= link_to 'Delete', [:admin, page], :confirm => 'Are you sure?', :method => :delete, :class =>'delete-link' %></div>
+            </td>
+        </tr>
+    <% end %>
+    </tbody>
+</table>
+
+<%= will_paginate @pages %>
+
+<% else %>
+
+    <h3>So far no Pages were created. <%= link_to 'Create new?', :action => :new %></h3>
+    
+<% end %>

@@ -1,0 +1,12 @@
+defaults: &defaults
+  host: tsweb.toa:3000  
+  app_name: Cms
+
+development:
+  <<: *defaults
+
+test: 
+  <<: *defaults
+
+production: 
+  <<: *defaults

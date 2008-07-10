@@ -1,0 +1,12 @@
+<% @page_title = 'New &quot;Editable area&quot;' %>
+
+
+<h1><%= @page_title %></h1>
+
+<% form_for([:admin, @editable_area]) do |f| %>
+    <%= render :partial => 'form', :locals => { :f => f } %>
+
+    <div class="buttons-area">
+        <%= submit_tag "Save" %> or <%= link_to('Cancel', admin_editable_areas_path, :class => "cancel-link") %>
+    </div>
+<% end %>

@@ -1,0 +1,26 @@
+<% @page_title = 'Editing &quot;Account&quot;' %> 
+
+<h1><%= @page_title %></h1>
+
+<% form_for @account, :url => admin_account_path(), :html => { :method => :put }  do |f| %>
+    <%= f.error_messages %>
+
+    <div>
+        <label for="account_login">Login<span class="required">*</span>:</label><br />
+        <%= f.text_field :login %>
+    </div>
+
+    <div>
+        <label for="account_email">Login<span class="required">*</span>:</label><br />
+        <%= f.text_field :email %>
+    </div>
+
+    
+    <div class="required-area">
+        <span class="required">*</span> - required fields
+    </div>
+
+    <div class="buttons-area">
+        <%= submit_tag "Update" %> or <%= link_to('Cancel', admin_account_path, :class => "cancel-link") %>
+    </div>
+<% end %>

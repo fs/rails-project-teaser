@@ -1,0 +1,44 @@
+<% @page_title = 'Editable areas' %>
+
+<h2><%= @page_title %></h2>
+
+
+<% unless @editable_areas.blank? %>
+    
+<%= option_selector(:editable_area, {
+    :to_dropdown => :name,
+    :path   => admin_editable_areas_path(),
+    :search => { :order => 'name'},
+    :empty_line => '- '*10 + 'Jump to area' + ' -'*10
+}) %>
+
+<table cellpadding="0" cellspacing="0" border="0" class="show-data">
+    <thead>
+        <tr>
+            <th>Description</th>
+            <th>System name</th>
+
+            <th class="tools">Tools</th>
+        </tr>
+    </thead>
+
+    <tbody>
+    <% for editable_area in @editable_areas %>
+        <tr class="row<%= cycle(1, 2) %>">
+            <td><%=h editable_area.description %></td>
+            <td><%=h editable_area.name %></td>
+            <td>
+                <div><%= link_to 'Edit', edit_admin_editable_area_path(editable_area) %></div>
+            </td>
+        </tr>
+    <% end %>
+    </tbody>
+</table>
+
+<%= will_paginate @editable_areas %>
+
+<% else %>
+
+    <h3>So far no Editable areas were created. <%= link_to 'Create new?', :action => :new %></h3>
+    
+<% end %>

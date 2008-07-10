@@ -1,0 +1,10 @@
+<%= tag( :div, html_options, true ) %>
+    <% form_tag( options[:path], :method => :get ) do %>
+        <%=  select_tag(
+                options[:option_name],
+                options[:choices],
+                :onchange => 'this.form.submit(); return false;'
+        ) %>
+    <% end %>
+</div>
+<div class="clear">

@@ -1,0 +1,20 @@
+index:
+  title: Home
+  url: /admin
+  roles: 
+  order: 1
+editable_areas:
+  title: Editable Areas
+  url: /admin/editable_areas
+  roles:
+  order: 2
+pages:
+  title: Pages
+  url: /admin/pages
+  roles:
+  order: 3
+account:
+  title: Settings
+  url: /admin/account
+  roles:
+  order: 4

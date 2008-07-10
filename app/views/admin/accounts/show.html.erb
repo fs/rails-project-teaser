@@ -1,0 +1,25 @@
+<% @page_title = 'Your profile' %>
+
+<h2>
+    <%= @page_title %>
+    <%= link_to "Edit", edit_admin_account_path() %>
+</h2>
+
+<table  width="100%" cellspacing="0" cellpadding="5" border="0">
+    <tr>
+        <td>
+            <label for="login">Login:</label>
+        </td>
+        <td>
+            <%= @account.login %>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label for="email">email:</label>
+        </td>
+        <td>
+            <%= @account.email %>
+        </td>
+    </tr>
+</table>

@@ -1,0 +1,8 @@
+account_1: # user with "admin" role
+  id: 1
+  login: admin
+  email: support@flatsourcing.com
+  salt: 7e3041ebc2fc05a40c60028e2c4901a81035d3cd
+  crypted_password: 259e1105c5b20f39e838f12a816b9462eda07231 # 123456
+  created_at: <%= Time.now.to_s :db %>
+  state: active

@@ -1,0 +1,7 @@
+<% @page_title = @page.title %>
+
+<%  unless @page.name.blank?  %>
+    <h1> <%= @page.name %> </h1>
+<% end %>
+	
+<%= @page.text %>

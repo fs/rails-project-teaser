@@ -1,5 +1,6 @@
-<h1>New subscriber</h1>
+<h1>Welcome to our site</h1>
 
+<h2>   </h2>
 <% form_for(@subscriber) do |f| %>
     <%= f.error_messages %>
     <%= f.hidden_field :referrer, :value => @subscriber.referrer  %>
@@ -8,7 +9,7 @@
     E-mail: <%= f.text_field :email %>
   </p>
   <p>
-    <%= f.submit "Create" %>
+    <%= f.submit "Ok" %>
   </p>
 <% end %>
 

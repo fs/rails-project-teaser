@@ -67,16 +67,5 @@ Rails::Initializer.run do |config|
   # Activate observers that should always be running
   # config.active_record.observers = :cacher, :garbage_collector
   
-  config.action_mailer.delivery_method = :test
-
-
-  config.action_mailer.smtp_settings = {
-      :address    => "domain.of.smtp.host.net" ,
-      :port       => 25,
-      :domain     => "domain.of.sender.net" ,
-      :authentication => :login,
-      :user_name => "dave" ,
-      :password   => "secret"
-  }
 
 end

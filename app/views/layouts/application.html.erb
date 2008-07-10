@@ -12,6 +12,9 @@
         <title> Test </title>
     </head>
     <body>
+        <% unless flash[:notice].blank? %>
+            <div id="notification"> <%= flash[:notice] %> </div>
+        <% end %>
         <div class="header">
             <%= editable_area('header') %>
         </div>

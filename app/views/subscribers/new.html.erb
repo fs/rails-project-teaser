@@ -3,8 +3,6 @@
 <h2>   </h2>
 <% form_for(@subscriber) do |f| %>
     <%= f.error_messages %>
-    <%= f.hidden_field :referrer, :value => @subscriber.referrer  %>
-
   <p>
     E-mail: <%= f.text_field :email %>
   </p>

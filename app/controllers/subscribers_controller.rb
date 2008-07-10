@@ -4,7 +4,7 @@ class SubscribersController < ApplicationController
     # GET /subscribers/new.xml
     def new
         @subscriber = Subscriber.new
-        @subscriber.referrer = request.referer
+        session[:referrer] = request.referer
     end
 
     # POST /subscribers
@@ -13,6 +13,7 @@ class SubscribersController < ApplicationController
         @subscriber = Subscriber.new(params[:subscriber])
 
         @subscriber.ip = request.remote_ip
+        @subscriber.referrer = session[:referrer]
         @subscriber.user_agent = request.user_agent
 
         if @subscriber.save

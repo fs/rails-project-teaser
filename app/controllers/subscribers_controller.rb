@@ -20,7 +20,7 @@ class SubscribersController < ApplicationController
             flash[:notice] = 'thank you'
             redirect_to (:action => 'new')
         else
-            flash[:notice] = 'error'           
+            flash[:notice] = 'error'        
             render(:action => 'new')
         end
 

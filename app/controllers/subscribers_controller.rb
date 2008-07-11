@@ -10,17 +10,17 @@ class SubscribersController < ApplicationController
     # POST /subscribers
     # POST /subscribers.xml
     def create
-        @subscriber = Subscriber.new(params[:subscriber])
+        @subscriber = Subscriber.new()
 
         @subscriber.ip = request.remote_ip
         @subscriber.referrer = session[:referrer]
         @subscriber.user_agent = request.user_agent
+        @subscriber.email = params[:subscriber]
 
         if @subscriber.save
-            flash[:notice] = 'thank you'
+            flash[:notice] = 'Thank you. Email sent for you!'
             redirect_to (:action => 'new')
         else
-            flash[:notice] = 'error'        
             render(:action => 'new')
         end
 

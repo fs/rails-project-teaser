@@ -15,7 +15,7 @@ class SubscribersController < ApplicationController
         @subscriber.ip = request.remote_ip
         @subscriber.referrer = session[:referrer]
         @subscriber.user_agent = request.user_agent
-        @subscriber.email = params[:subscriber]
+        @subscriber.email = params[:subscriber]['email']
 
         if @subscriber.save
             flash[:notice] = 'Thank you. Email sent for you!'
